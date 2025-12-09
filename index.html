@@ -250,13 +250,14 @@
         /* --- MOBILE RESPONSIVE --- */
         @media (max-width: 550px) {
             .header-section, .main-card, .footer-cta { max-width: 100%; }
-            .couple-names { font-size: 3rem; }
+            .couple-names { font-size: 1.5rem; }
             .big-number { font-size: 3rem; }
             .date-time-block { flex-direction: column; align-items: center; }
             .date-time-item { border-bottom: 1px dotted #ccc; width: 80%; padding: 15px 0; }
             .date-time-item:last-child { border-bottom: none; }
             .date-time-item:not(:last-child)::after { content: none; }
-            .image-frame { width: 85%; height: 150px; }
+            .image-frame { width: 100%; height: 550px; }
+            /* .image-frame { width: 55%; height: 550px; } */
             .btn { width: 100%; }
         }
     </style>
@@ -289,16 +290,19 @@
         <p class="invitation-line">Gia đình nhà trai</p>
         <div class="date-time-block">
             <div class="date-time-item">
-                <span class="small-text">Tháng</span>
+                <span class="big-number">20.12.25</span>
+
+                <!-- <span class="small-text">Tháng</span>
                 <span class="big-number">12</span>
                 <span class="small-text">Ngày</span>
                 <span class="big-number">20</span>
+                <span class="small-text">Năm 2026</span> -->
             </div>
             
             <div class="date-time-item">
                 <span class="small-text">Thứ</span>
                 <span class="big-number">Bảy</span>
-                <span class="small-text">Năm 2026</span>
+                
             </div>
             
             <div class="date-time-item">
