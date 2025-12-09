@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thiệp Cưới | [Thanh Nhàn] & [Minh Quang]</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- CẤU HÌNH PALETTE & BACKGROUND --- */
+        :root {
+            --maroon: #800020;         /* Đỏ Burgundy Sâu */
+            --gold-accent: #c5a059;    /* Vàng Đồng/Kim Loại */
+            --cream-bg: #fffbf0;       /* Nền Vàng Kem */
+            --text-light: #fff5e0;
+            --text-dark: #333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Cormorant Garamond', serif;
+            background-color: var(--cream-bg);
+            color: var(--text-dark);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* --- PHẦN ẢNH VÀ THÔNG ĐIỆP CHÀO ĐÓN (TOP CARD) --- */
+        .header-section {
+            width: 100%;
+            max-width: 850px;
+            background-color: var(--maroon);
+            color: var(--text-light);
+            text-align: center;
+            padding-top: 50px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            position: relative;
+            /* Tạo hiệu ứng bo tròn ở dưới */
+            border-bottom-left-radius: 35%;
+            border-bottom-right-radius: 35%;
+            border-bottom: 5px solid var(--gold-accent);
+            z-index: 10;
+        }
+        
+        .image-frame {
+            width: 90%;
+            max-width: 500px;
+            height: 600px;
+            margin: -40px auto 30px;
+            border: 5px solid var(--gold-accent);
+            border-radius: 40%;
+            overflow: hidden;
+            box-shadow: 0 0 15px rgba(0,0,0,0.5);
+        }
+
+        .image-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .header-text {
+            padding: 0 20px 50px;
+        }
+
+        .header-text h1 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 3rem;
+            color: var(--gold-accent);
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+        .header-text p {
+            font-size: 1.4rem;
+            opacity: 0.9;
+            /* line-height: 1.1; */
+        }
+
+        /* --- THÔNG TIN CHÍNH (MAIN CARD - Lấy cảm hứng Mẫu 1) --- */
+        .main-card {
+            width: 100%;
+            max-width: 550px;
+            background-color: var(--cream-bg);
+            padding: 40px;
+            margin-top: -30px; /* Chồng lấn lên phần header */
+            position: relative;
+            z-index: 5;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .invitation-line {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            opacity: 0.9;
+            font-style: italic;
+        }
+
+        .couple-names {
+            font-family: 'Great Vibes', cursive;
+            font-size: 3rem;
+            color: var(--maroon);
+            line-height: 1.1;
+            margin: 10px 0 20px;
+        }
+        .ampersand {
+            display: block;
+            font-size: 2.5rem;
+            color: var(--gold-accent);
+        }
+
+        /* --- KHU VỰC NGÀY GIỜ (Lấy cảm hứng Mẫu 2) --- */
+        .date-time-block {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            margin: 30px 0 40px;
+            border-top: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+            padding: 20px 0;
+        }
+
+        .date-time-item {
+            padding: 0 15px;
+            text-align: center;
+            position: relative;
+        }
+
+        .date-time-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 1px;
+            height: 80%;
+            background-color: var(--gold-accent);
+        }
+
+        .big-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 4rem;
+            font-weight: 700;
+            line-height: 1;
+            color: var(--maroon);
+        }
+        .big-icon {
+            font-size: 2.5rem;
+            font-weight: 700;
+            line-height: 1;
+            color: var(--maroon);
+        }
+        .small-text {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #888;
+        }
+
+        .details-section {
+            margin-top: 20px;
+            font-size: 1.5rem;
+            line-height: 1.6;
+        }
+        .details-section strong {
+            color: var(--maroon);
+            font-weight: 600;
+        }
+
+        /* --- FOOTER & CTA --- */
+        .footer-cta {
+            width: 100%;
+            max-width: 650px;
+            padding: 40px 20px;
+            text-align: center;
+            background-color: #f0f0f0;
+            border-top: 3px solid var(--gold-accent);
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--maroon);
+            color: var(--text-light);
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin: 10px;
+            border: 2px solid var(--maroon);
+        }
+
+        .btn:hover {
+            background-color: var(--gold-accent);
+            border-color: var(--gold-accent);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--maroon);
+            border: 2px solid var(--maroon);
+        }
+        .btn-secondary:hover {
+            background-color: var(--maroon);
+            color: var(--text-light);
+        }
+/* --- BANK INFO SECTION --- */
+        .bank-info-section {
+            margin-top: 40px;
+            padding: 20px 0;
+            border-top: 1px dashed #ccc;
+            text-align: center;
+        }
+
+        .bank-info-section h3 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 1.8rem;
+            color: var(--gold-accent);
+            margin-bottom: 15px;
+        }
+
+        .bank-details p {
+            font-size: 1rem;
+            line-height: 1.8;
+            padding: 5px 0;
+            border-bottom: 1px dotted rgba(0, 0, 0, 0.1);
+        }
+
+        .bank-details p:last-child {
+            border-bottom: none;
+        }
+
+        .bank-details strong {
+            color: var(--maroon);
+            font-weight: 700;
+            display: inline-block;
+            min-width: 100px; /* Căn chỉnh cho đẹp */
+            text-align: left;
+        }
+        /* --- MOBILE RESPONSIVE --- */
+        @media (max-width: 550px) {
+            .header-section, .main-card, .footer-cta { max-width: 100%; }
+            .couple-names { font-size: 3rem; }
+            .big-number { font-size: 3rem; }
+            .date-time-block { flex-direction: column; align-items: center; }
+            .date-time-item { border-bottom: 1px dotted #ccc; width: 80%; padding: 15px 0; }
+            .date-time-item:last-child { border-bottom: none; }
+            .date-time-item:not(:last-child)::after { content: none; }
+            .image-frame { width: 85%; height: 150px; }
+            .btn { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-section">
+        <div class="image-frame">
+            <img src="images\DSC05711.jpg" alt="Ảnh Cô Dâu và Chú Rể">
+        </div>
+        <div class="header-text">
+            <p>Trân trọng thông báo Lễ Thành Hôn của chúng tôi</p>
+            <h1>Thanh Nhàn & Minh Quang</h1>
+            <p>Chúng tôi rất mong chờ được chia sẻ niềm hạnh phúc này cùng bạn.</p>
+        </div>
+    </div>
+    
+    <div class="main-card">
+        
+        <p class="invitation-line">Gia đình nhà gái</p>
+
+        <h2 class="couple-names">
+            
+            <span class="couple-names">Ông: Trần Viết Khuể</span>
+            <span class="couple-names">Bà: Trần Thị Hạnh</span>
+            <span class="ampersand">&</span>
+            <span class="couple-names">Ông: Đặng Minh Xuân</span>
+            <span class="couple-names">Bà: Mai Thị Xoan</span>
+        </h2>
+        <p class="invitation-line">Gia đình nhà trai</p>
+        <div class="date-time-block">
+            <div class="date-time-item">
+                <span class="small-text">Tháng</span>
+                <span class="big-number">12</span>
+                <span class="small-text">Ngày</span>
+                <span class="big-number">20</span>
+            </div>
+            
+            <div class="date-time-item">
+                <span class="small-text">Thứ</span>
+                <span class="big-number">Bảy</span>
+                <span class="small-text">Năm 2026</span>
+            </div>
+            
+            <div class="date-time-item">
+                <span class="big-number">16</span>
+                <span class="small-text">Giờ</span>
+                <span class="small-text">Đón Khách</span>
+            </div>
+        </div>
+
+        <div class="details-section">
+            <p>
+                <span class="big-icon">🥂</span>Tiệc chiêu đãi Lễ Cưới<br>
+                <strong>Địa điểm:</strong> Thôn Tài Giá, Quỳnh Hưng, <br>
+                Quỳnh Phụ, Thái Bình
+            </p>            
+        </div>
+        <div class="bank-info-section">
+            <h3>Quà Mừng Hạnh Phúc</h3>
+            <p style="font-style: italic; font-size: 0.95rem; margin-bottom: 20px; color: #666;">
+                Chúng tôi xin chân thành cảm ơn những lời chúc phúc từ bạn!
+            </p>
+            
+            <div class="bank-details">
+                <!-- <p><strong>C. Dâu:</strong> HỒNG NHUNG | <span style="color: var(--gold-accent);">0987.xxxx.9999</span> (Vietcombank)</p> -->
+                <!-- <p><strong>C. Rể:</strong> Minh Quang | <span style="color: var(--gold-accent);">1134.xxxx.8888</span> (Techcombank)</p> -->
+                <img src="images/qr_co_dau.jpg" width="50">
+            </div>
+        </div>
+
+        <p style="margin-top: 20px; font-size: 1rem; font-style: italic;">
+                Vui lòng xác nhận tham dự.
+            </p>
+    </div>
+
+    <div class="footer-cta">
+        <p style="font-size: 1.1rem; color: var(--text-dark); margin-bottom: 20px;">
+            Hân hạnh được đón tiếp và chia sẻ niềm vui cùng bạn!
+        </p>
+
+        <a href="https://forms.gle/C2pHhPBVRXNK15Ba8" target="_blank" class="btn">XÁC NHẬN THAM GIA</a>
+        <a href="https://maps.app.goo.gl/eW7WgE3Ysvc8E1Pw9" target="_blank" class="btn btn-secondary">XEM BẢN ĐỒ</a>
+    </div>
+
+</body>
+</html>
